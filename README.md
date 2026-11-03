@@ -2,8 +2,8 @@
 
 Static site (plain HTML and CSS, no build step) published with GitHub Pages.
 
-- Public website: <https://snorin239.github.io/>
-- Source repository: <https://github.com/snorin239/snorin239.github.io>
+- Public website: <https://sergey-norin.github.io/>
+- Source repository: <https://github.com/sergey-norin/sergey-norin.github.io>
 - Original McGill website: <https://www.math.mcgill.ca/snorin/>
 
 ```
@@ -45,7 +45,7 @@ their own. When a preprint is published, change `data-y`/label to the year and r
 
 ## Publish updates
 
-GitHub Pages serves the root of the `main` branch in `snorin239/snorin239.github.io`.
+GitHub Pages serves the root of the `main` branch in `sergey-norin/sergey-norin.github.io`.
 The empty `.nojekyll` file keeps the HTML, CSS, JavaScript, fonts, and PDF unchanged.
 No build tools or dependencies are required.
 
@@ -63,15 +63,15 @@ If you add a new page or another file outside `assets/`, add it explicitly with 
 Only stage files intended for the public repository. Each push to `main` automatically
 publishes an update; allow a few minutes for it to appear.
 
-Publication settings are at <https://github.com/snorin239/snorin239.github.io/settings/pages>:
+Publication settings are at <https://github.com/sergey-norin/sergey-norin.github.io/settings/pages>:
 Source **Deploy from a branch**, branch **main**, folder **/ (root)**.
-Deployment progress is at <https://github.com/snorin239/snorin239.github.io/actions>.
+Deployment progress is at <https://github.com/sergey-norin/sergey-norin.github.io/actions>.
 
 To work on another computer, clone the repository first:
 
 ```
-git clone https://github.com/snorin239/snorin239.github.io.git
-cd snorin239.github.io
+git clone https://github.com/sergey-norin/sergey-norin.github.io.git
+cd sergey-norin.github.io
 ```
 
 ## Still hosted on the McGill server
