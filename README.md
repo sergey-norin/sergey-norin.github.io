@@ -7,8 +7,10 @@ Static site (plain HTML and CSS, no build step) published with GitHub Pages.
 - Original McGill website: <https://www.math.mcgill.ca/snorin/>
 
 ```
-index.html             Home: about, contact, Barbados workshops, past teaching
+index.html             Home: about, contact, Barbados workshops
 students.html          Current and former students
+coauthors.html         Coauthors, ranked by number of joint papers
+teaching.html          Selected past teaching
 publications.html      Papers and preprints, by topic (written in the file) or by year (built by JS)
 cv.pdf                 CV, compiled from Norin_CV_2026.tex with XeLaTeX
 assets/css/style.css   All styling (colours and fonts follow the CV)
@@ -41,7 +43,12 @@ their own. When a preprint is published, change `data-y`/label to the year and r
 
 **Students.** Edit the `<li>` rows in `students.html`.
 
-**Workshops, teaching.** Edit the corresponding `<li>` rows in `index.html`.
+**Coauthors.** After adding a paper, move each of its coauthors to the row of `coauthors.html`
+that matches their new number of joint papers (instructions at the top of that file).
+
+**Workshops.** Edit the corresponding `<li>` rows in `index.html`.
+
+**Teaching.** Edit the `<li>` rows in `teaching.html`.
 
 ## Publish updates
 
@@ -53,7 +60,7 @@ After editing and previewing the site, run these commands in this folder:
 
 ```
 git status
-git add index.html students.html publications.html cv.pdf assets README.md .gitattributes .gitignore .nojekyll
+git add index.html students.html publications.html coauthors.html teaching.html cv.pdf assets README.md .gitattributes .gitignore .nojekyll
 git diff --cached --stat
 git commit -m "Update website"
 git push

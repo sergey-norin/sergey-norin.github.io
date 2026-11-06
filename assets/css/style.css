@@ -199,6 +199,45 @@ sub, sup { font-size: 0.72em; line-height: 0; }
 #by-year .yeargroup + .yeargroup { margin-top: 0.5rem; }
 [hidden] { display: none !important; }
 
+/* ---------- coauthors ----------------------------------------------------- */
+/* Rows of names grouped by number of joint papers; --k (set on each row)
+   is that number and drives the font size and weight. */
+.co-head, .coauthors > li {
+  display: grid; grid-template-columns: 3rem minmax(0, 1fr); column-gap: 1.1rem;
+  align-items: baseline;
+}
+.co-head {
+  margin: 1.4rem 0 0.2rem;
+  font-family: var(--sans); font-weight: 600; font-size: 0.8rem;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+}
+.co-head span:first-child { text-align: right; }
+.coauthors { list-style: none; margin: 0; padding: 0; }
+.coauthors > li {
+  padding: 0.55rem 0 0.6rem;
+  border-top: 1px solid var(--hair);
+}
+.coauthors .n {
+  font-family: var(--sans); font-weight: 600; color: var(--accent);
+  font-size: calc(0.95rem + (var(--k) - 1) * 0.07rem);
+  text-align: right; font-variant-numeric: tabular-nums; line-height: 1.2;
+}
+.coauthors .names {
+  list-style: none; margin: 0; padding: 0;
+  font-size: calc(1rem + (var(--k) - 1) * 0.085rem);
+  /* semibold from 5 joint papers up */
+  font-weight: clamp(400, calc(400 + (var(--k) - 4) * 200), 600);
+  line-height: 1.45;
+}
+.coauthors .names li { display: inline; white-space: nowrap; }
+.coauthors .names li:not(:last-child)::after {
+  content: "\00a0\00b7"; color: var(--muted); font-weight: 400;
+}
+.vh {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
 /* ---------- footer -------------------------------------------------------- */
 .foot {
   margin-top: 3rem; padding-top: 0.9rem; border-top: 1px solid var(--hair);
@@ -221,6 +260,18 @@ sub, sup { font-size: 0.72em; line-height: 0; }
   .pubs .y:empty { display: none; }
   .pubs > li { padding: 0.45rem 0; }
   .cvlist > li { padding: 0.35rem 0; }
+  .coauthors > li { grid-template-columns: 2.1rem minmax(0, 1fr); column-gap: 0.75rem; }
+  .co-head { display: none; }
+  /* five tabs: one spread-out row from 375px up, wrapping (not overflowing) below that */
+  .nav { font-size: 0.93rem; }
+  .nav ul { margin: 0 -0.25rem; flex-wrap: wrap; justify-content: space-between; gap: 0; }
+  .nav a { padding: 0.3rem 0.25rem; }
+  .coauthors { margin-top: 1rem; }
+  .coauthors .names { font-size: calc(0.98rem + (var(--k) - 1) * 0.06rem); }
+  .coauthors .n { font-size: calc(0.9rem + (var(--k) - 1) * 0.05rem); }
+}
+@media (max-width: 22rem) {
+  .nav ul { justify-content: flex-start; column-gap: 0.6rem; }
 }
 
 /* ---------- print --------------------------------------------------------- */
