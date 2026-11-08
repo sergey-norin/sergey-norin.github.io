@@ -158,7 +158,7 @@ sub, sup { font-size: 0.72em; line-height: 0; }
 .inline-list a:hover { border-color: var(--accent); background: var(--accent-soft); text-decoration: none; }
 
 .quicklinks { font-family: var(--sans); font-size: 1rem; margin-top: 1rem; }
-.quicklinks a { font-weight: 600; }
+.quicklinks a { font-weight: 600; white-space: nowrap; }
 .quicklinks .sep { color: var(--hair); margin: 0 0.5rem; }
 
 /* ---------- publications -------------------------------------------------- */
